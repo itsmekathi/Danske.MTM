@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{46CDA0E3-215B-432B-B9D3-4A1D3F8A82DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.WebApi", "..\Danske.MTM.WebApi\Danske.MTM.WebApi.csproj", "{8C95039F-3711-4EA7-8EB8-CFF054C567A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C0179B7E-A1E2-4C5C-91E0-2F02B63A30C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.Persistence", "..\Danske.MTM.Persistence\Danske.MTM.Persistence.csproj", "{7A5C7BC3-501A-492D-B69D-5DD25CEEF57F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.Application", "..\Danske.MTM.Application\Danske.MTM.Application.csproj", "{B3B7D22E-CF72-426E-A73B-71C2A08B8653}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4AB38117-7288-49D8-B2DF-02FE6D887EB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.Application.Tests", "..\Danske.MTM.Application.Tests\Danske.MTM.Application.Tests.csproj", "{16D26317-54F9-45CC-8623-216BA186EB5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.WebApi.Tests", "..\Danske.MTM.WebApi.Tests\Danske.MTM.WebApi.Tests.csproj", "{DBDC1E6B-8477-4891-8E21-575E60C871F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C95039F-3711-4EA7-8EB8-CFF054C567A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C95039F-3711-4EA7-8EB8-CFF054C567A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C95039F-3711-4EA7-8EB8-CFF054C567A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C95039F-3711-4EA7-8EB8-CFF054C567A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A5C7BC3-501A-492D-B69D-5DD25CEEF57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A5C7BC3-501A-492D-B69D-5DD25CEEF57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A5C7BC3-501A-492D-B69D-5DD25CEEF57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A5C7BC3-501A-492D-B69D-5DD25CEEF57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B7D22E-CF72-426E-A73B-71C2A08B8653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B7D22E-CF72-426E-A73B-71C2A08B8653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B7D22E-CF72-426E-A73B-71C2A08B8653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B7D22E-CF72-426E-A73B-71C2A08B8653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16D26317-54F9-45CC-8623-216BA186EB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16D26317-54F9-45CC-8623-216BA186EB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16D26317-54F9-45CC-8623-216BA186EB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16D26317-54F9-45CC-8623-216BA186EB5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBDC1E6B-8477-4891-8E21-575E60C871F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBDC1E6B-8477-4891-8E21-575E60C871F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBDC1E6B-8477-4891-8E21-575E60C871F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBDC1E6B-8477-4891-8E21-575E60C871F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C95039F-3711-4EA7-8EB8-CFF054C567A9} = {46CDA0E3-215B-432B-B9D3-4A1D3F8A82DB}
+		{7A5C7BC3-501A-492D-B69D-5DD25CEEF57F} = {C0179B7E-A1E2-4C5C-91E0-2F02B63A30C7}
+		{B3B7D22E-CF72-426E-A73B-71C2A08B8653} = {C0179B7E-A1E2-4C5C-91E0-2F02B63A30C7}
+		{16D26317-54F9-45CC-8623-216BA186EB5B} = {4AB38117-7288-49D8-B2DF-02FE6D887EB1}
+		{DBDC1E6B-8477-4891-8E21-575E60C871F9} = {4AB38117-7288-49D8-B2DF-02FE6D887EB1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB394E43-302A-4A59-A314-13F9E13C6BEF}
+	EndGlobalSection
+EndGlobal
