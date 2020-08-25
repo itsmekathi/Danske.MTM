@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:57354",
+      "applicationUrl": "http://localhost:61458",
       "sslPort": 0
     }
   },
@@ -19,6 +19,7 @@
     },
     "Danske.MTM.WebApi": {
       "commandName": "Project",
+      "launchUrl": "weatherforecast",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -3,7 +3,7 @@
 namespace Danske.MTM.WebApi.Controllers
 {
     [ApiController]
-    public class BaseApiController: ControllerBase
+    public class BaseApiController : ControllerBase
     {
     }
 }
