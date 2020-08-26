@@ -9,15 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{98CB60B0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{72E54C86-B5E0-48DD-8B93-F60B84044905}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.Persistence", "Danske.MTM.Persistence\Danske.MTM.Persistence.csproj", "{D49414DB-766B-4B86-A041-40B7A275AD54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danske.MTM.Persistence", "Danske.MTM.Persistence\Danske.MTM.Persistence.csproj", "{D49414DB-766B-4B86-A041-40B7A275AD54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.Application", "Danske.MTM.Application\Danske.MTM.Application.csproj", "{22FD0A52-F42A-448C-9240-21F1338C4636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danske.MTM.Application", "Danske.MTM.Application\Danske.MTM.Application.csproj", "{22FD0A52-F42A-448C-9240-21F1338C4636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.WebApi", "Danske.MTM.WebApi\Danske.MTM.WebApi.csproj", "{6CC2ECB8-EAF0-40CD-8F7F-A0E257EE69CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danske.MTM.WebApi", "Danske.MTM.WebApi\Danske.MTM.WebApi.csproj", "{6CC2ECB8-EAF0-40CD-8F7F-A0E257EE69CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.Application.Tests", "Danske.MTM.Application.Tests\Danske.MTM.Application.Tests.csproj", "{746503AE-0D38-4946-9D48-9B0B511D1929}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danske.MTM.Application.Tests", "Danske.MTM.Application.Tests\Danske.MTM.Application.Tests.csproj", "{746503AE-0D38-4946-9D48-9B0B511D1929}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.WebApi.Tests", "Danske.MTM.WebApi.Tests\Danske.MTM.WebApi.Tests.csproj", "{4F37F61D-1B69-4E8B-9B0A-3C1299753760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danske.MTM.WebApi.Tests", "Danske.MTM.WebApi.Tests\Danske.MTM.WebApi.Tests.csproj", "{4F37F61D-1B69-4E8B-9B0A-3C1299753760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danske.MTM.Common", "Danske.MTM.Common\Danske.MTM.Common.csproj", "{CCD11BC6-84FB-4FE4-AD12-69C1DDC7A07E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4F37F61D-1B69-4E8B-9B0A-3C1299753760}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F37F61D-1B69-4E8B-9B0A-3C1299753760}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F37F61D-1B69-4E8B-9B0A-3C1299753760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD11BC6-84FB-4FE4-AD12-69C1DDC7A07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD11BC6-84FB-4FE4-AD12-69C1DDC7A07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD11BC6-84FB-4FE4-AD12-69C1DDC7A07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD11BC6-84FB-4FE4-AD12-69C1DDC7A07E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{6CC2ECB8-EAF0-40CD-8F7F-A0E257EE69CE} = {41229BC6-50AE-4CE9-A913-2F6D19B8B6FF}
 		{746503AE-0D38-4946-9D48-9B0B511D1929} = {98CB60B0-59C2-4135-ABDB-3DF1C1CD724B}
 		{4F37F61D-1B69-4E8B-9B0A-3C1299753760} = {98CB60B0-59C2-4135-ABDB-3DF1C1CD724B}
+		{CCD11BC6-84FB-4FE4-AD12-69C1DDC7A07E} = {72E54C86-B5E0-48DD-8B93-F60B84044905}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {748CF438-17B3-44CD-9558-DF5202F39E9F}
