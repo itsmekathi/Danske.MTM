@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "30127362-ab04-4a66-b071-edb5ed19703f",
+		"name": "Danske.MTM",
+		"description": "All request send for Danske.MTM enddpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All schedule taxes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/api/Taxes/GetAll",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"Taxes",
+						"GetAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tax by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/api/Taxes/GetById/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"Taxes",
+						"GetById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new tax entry - invalid request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taxSheduleTypeId\": 5,\r\n    \"municipalityName\": \"Copenhagen\",\r\n    \"taxAmount\": 0.20,\r\n    \"fromDate\": \"2016-01-01T00:00:00\",\r\n    \"todate\": \"2016-12-31T00:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/AddTax",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"AddTax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new tax entry - valid request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taxSheduleTypeId\": 1,\r\n    \"municipalityName\": \"Copenhagen\",\r\n    \"taxAmount\": 0.20,\r\n    \"fromDate\": \"2016-01-01\",\r\n    \"todate\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/AddTax",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"AddTax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Upload request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Kathiravan/Projects/Danske.MTM/Samples/data.json"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/BulkUploadTaxes",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"BulkUploadTaxes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

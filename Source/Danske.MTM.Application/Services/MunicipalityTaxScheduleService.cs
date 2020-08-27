@@ -14,10 +14,24 @@ namespace Danske.MTM.Application.Services
     public class MunicipalityTaxScheduleService : IMunicipalityTaxScheduleService
     {
         private IMunicipalityTaxScheduleRepository _municipalityTaxScheduleRepository { get; }
+
         public MunicipalityTaxScheduleService(IMunicipalityTaxScheduleRepository municipalityTaxScheduleRepository)
         {
             _municipalityTaxScheduleRepository = municipalityTaxScheduleRepository;
         }
+
+        public async Task<IEnumerable<MunicipalityTaxScheduleDto>> GetAllMunicipalityTax()
+        {
+            return (await _municipalityTaxScheduleRepository.GetAll()).Select(_ => MunicipalityTaxScheduleMapper.ToDto(_));
+        }
+
+        public async Task<MunicipalityTaxScheduleDto> GetMunicipalityTaxById(int id)
+        {
+            var taxSchedule = await _municipalityTaxScheduleRepository.GetById(id);
+            if (taxSchedule == null) return null;
+            return MunicipalityTaxScheduleMapper.ToDto(taxSchedule);
+        }
+
         public async Task<MunicipalityTaxScheduleDto> SearchMunicipalityTax(string municipalityName, DateTime date)
         {
             MunicipalityTaxSchedules taxSchedule = await _municipalityTaxScheduleRepository.GetByDay(municipalityName, date);
@@ -43,7 +57,9 @@ namespace Danske.MTM.Application.Services
             bool isValid = MunicipalityTaxScheduleValidator.IsValid(municipalityTaxScheduleDto);
             if (!isValid) throw new ValidationException();
             MunicipalityTaxSchedules taxSchedule = MunicipalityTaxScheduleMapper.ToEntity(municipalityTaxScheduleDto);
+            taxSchedule.CreatedOn = DateTime.Now;
             await _municipalityTaxScheduleRepository.AddTaxSchedule(taxSchedule);
+
             return MunicipalityTaxScheduleMapper.ToDto(taxSchedule);
         }
 
@@ -51,18 +67,27 @@ namespace Danske.MTM.Application.Services
         {
             MunicipalityTaxSchedules taxSchedule = await _municipalityTaxScheduleRepository.GetById(id);
             if (taxSchedule == null) throw new NotFoundException("MunicipalityTaxSchedules", id);
+
             taxSchedule.ModifiedOn = DateTime.Now;
             taxSchedule.MunicipalityName = municipalityTaxScheduleDto.MunicipalityName;
             taxSchedule.FromDate = municipalityTaxScheduleDto.FromDate;
             taxSchedule.Todate = municipalityTaxScheduleDto.Todate;
             taxSchedule.TaxAmount = municipalityTaxScheduleDto.TaxAmount;
+
             await _municipalityTaxScheduleRepository.UpdateTaxSchedule(taxSchedule);
             return MunicipalityTaxScheduleMapper.ToDto(taxSchedule);
         }
 
-        public async Task<IEnumerable<MunicipalityTaxScheduleDto>> GetAllMunicipalityTax()
+        public async Task<int> BulkAddMunicipalityTax(IEnumerable<MunicipalityTaxScheduleDto> municipalityTaxScheduleDtos)
         {
-            return (await _municipalityTaxScheduleRepository.GetAll()).Select(_ => MunicipalityTaxScheduleMapper.ToDto(_));
+            IEnumerable<MunicipalityTaxSchedules> taxSchedules = municipalityTaxScheduleDtos.Select(_ =>
+            {
+                var entity = MunicipalityTaxScheduleMapper.ToEntity(_);
+                entity.CreatedOn = DateTime.Now;
+                return entity;
+            });
+
+            return await _municipalityTaxScheduleRepository.BulkInsertTaxSchedule(taxSchedules);
         }
     }
 }

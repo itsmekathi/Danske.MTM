@@ -1,0 +1,23 @@
+[
+    {
+        "taxSheduleTypeId": 1,
+        "municipalityName": "Copenhagen",
+        "taxAmount": 0.20,
+        "fromDate": "2016-01-01",
+        "todate": null
+    },
+    {
+        "taxSheduleTypeId": 1,
+        "municipalityName": "Copenhagen",
+        "taxAmount": 0.20,
+        "fromDate": "2016-01-01",
+        "todate": null
+    },
+    {
+        "taxSheduleTypeId": 1,
+        "municipalityName": "Copenhagen",
+        "taxAmount": 0.20,
+        "fromDate": "2016-01-01",
+        "todate": null
+    }
+]

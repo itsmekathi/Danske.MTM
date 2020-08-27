@@ -12,7 +12,7 @@ namespace Danske.MTM.Persistence.Context
             _configuration = configuration;
         }
 
-        public MTMContext(DbContextOptions<MTMContext> options)
+        public MTMContext(DbContextOptions<MTMContext> options, string isTest)
             : base(options)
         {
         }
@@ -26,6 +26,7 @@ namespace Danske.MTM.Persistence.Context
             {
                 optionsBuilder.UseSqlServer(_configuration["DatabaseConnectionString"]);
             }
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,7 +41,7 @@ namespace Danske.MTM.Persistence.Context
                     .WithMany(p => p.MunicipalityTaxSchedules)
                     .HasForeignKey(d => d.TaxSheduleTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Municipal__TaxSh__46E78A0C");
+                    .HasConstraintName("FK__Municipal__TaxSh__3C69FB99");
             });
 
             modelBuilder.Entity<TaxScheduleTypes>(entity =>

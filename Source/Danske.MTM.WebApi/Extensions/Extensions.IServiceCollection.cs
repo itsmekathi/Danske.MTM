@@ -26,8 +26,8 @@ namespace Danske.MTM.WebApi.Extensions
         private static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddSingleton<ILogger, ConsoleLogger>();
-            services.AddSingleton<IMunicipalityTaxScheduleRepository, MunicipalityTaxScheduleRepository>();
-            services.AddSingleton<IMunicipalityTaxScheduleService, MunicipalityTaxScheduleService>();
+            services.AddTransient<IMunicipalityTaxScheduleRepository, MunicipalityTaxScheduleRepository>();
+            services.AddTransient<IMunicipalityTaxScheduleService, MunicipalityTaxScheduleService>();
             return services;
         }
     }

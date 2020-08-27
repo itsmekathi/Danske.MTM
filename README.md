@@ -45,6 +45,8 @@ Below tables would be needed to implement the requirement
 3. Check the environment you are in, this would be visible checking the project setting of Danske.MTM.WebApi, debug window, environment variables.
 4. Configure the Connection string in app.{environment}.json to point to the created database.
 5. Start running the project with kestral with or without debugging.
+6. Now you Can verify the output using post man by making request to the particular endpoints.
+7. Tested api requests and environment config are present in Samples/PostManExport folder which can be imported.
 
 ## Web Links
 * [All pending tasks](https://github.com/itsmekathi/Danske.MTM/issues)
