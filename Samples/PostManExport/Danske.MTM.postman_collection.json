@@ -137,6 +137,246 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Search by name and date -01",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Kathiravan/Projects/Danske.MTM/Samples/data.json"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/Search?municipalityName=Copenhagen&date=2016-01-01",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "municipalityName",
+							"value": "Copenhagen"
+						},
+						{
+							"key": "date",
+							"value": "2016-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by name and date -02",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Kathiravan/Projects/Danske.MTM/Samples/data.json"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/Search?municipalityName=Copenhagen&date=2016-05-02",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "municipalityName",
+							"value": "Copenhagen"
+						},
+						{
+							"key": "date",
+							"value": "2016-05-02"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by name and date -03",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Kathiravan/Projects/Danske.MTM/Samples/data.json"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/Search?municipalityName=Copenhagen&date=2016-07-10",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "municipalityName",
+							"value": "Copenhagen"
+						},
+						{
+							"key": "date",
+							"value": "2016-07-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by name and date - 04",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Kathiravan/Projects/Danske.MTM/Samples/data.json"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/Search?municipalityName=Copenhagen&date=2016-03-16",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "municipalityName",
+							"value": "Copenhagen"
+						},
+						{
+							"key": "date",
+							"value": "2016-03-16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by name and date - 05 - non existent municipality",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Kathiravan/Projects/Danske.MTM/Samples/data.json"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/Search?municipalityName=Copenhagen1&date=2016-03-16",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "municipalityName",
+							"value": "Copenhagen1"
+						},
+						{
+							"key": "date",
+							"value": "2016-03-16"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

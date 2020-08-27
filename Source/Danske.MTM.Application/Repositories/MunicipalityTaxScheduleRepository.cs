@@ -80,7 +80,7 @@ namespace Danske.MTM.Application.Repositories
             return await _mtmContext.MunicipalityTaxSchedules
                .FirstOrDefaultAsync(_ => _.TaxSheduleTypeId == (int)type
                && _.MunicipalityName == municipalityName
-               && _.FromDate.Date >= date.Date && _.Todate.Value.Date <= date.Date);
+               && date.Date >= _.FromDate.Date && date.Date <= _.Todate.Value.Date);
         }
     }
 }

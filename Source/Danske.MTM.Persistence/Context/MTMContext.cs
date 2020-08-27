@@ -1,6 +1,8 @@
-﻿using Danske.MTM.Persistence.Models.MTM;
+﻿using Danske.MTM.Common.Enums;
+using Danske.MTM.Persistence.Models.MTM;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace Danske.MTM.Persistence.Context
 {
@@ -25,6 +27,13 @@ namespace Danske.MTM.Persistence.Context
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(_configuration["DatabaseConnectionString"]);
+                if (_configuration["Environment"] == eEnvironment.Development.ToString())
+                {
+                    optionsBuilder.UseLoggerFactory(LoggerFactory.Create(builder =>
+                    {
+                        builder.AddConsole();
+                    }));
+                }
             }
 
         }
