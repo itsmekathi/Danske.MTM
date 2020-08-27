@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,6 +18,8 @@ namespace Danske.MTM.Persistence.Models.MTM
         public DateTime FromDate { get; set; }
         [Column("TODate", TypeName = "date")]
         public DateTime? Todate { get; set; }
+        [Column(TypeName = "decimal(5, 2)")]
+        public decimal TaxAmount { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime CreatedOn { get; set; }
         [Column(TypeName = "datetime")]

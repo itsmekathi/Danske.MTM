@@ -6,7 +6,7 @@ namespace Danske.MTM.Persistence.Context
 {
     public partial class MTMContext : DbContext
     {
-        private readonly IConfiguration _configuration;
+        private IConfiguration _configuration;
         public MTMContext(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -40,7 +40,7 @@ namespace Danske.MTM.Persistence.Context
                     .WithMany(p => p.MunicipalityTaxSchedules)
                     .HasForeignKey(d => d.TaxSheduleTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Municipal__TaxSh__4222D4EF");
+                    .HasConstraintName("FK__Municipal__TaxSh__46E78A0C");
             });
 
             modelBuilder.Entity<TaxScheduleTypes>(entity =>

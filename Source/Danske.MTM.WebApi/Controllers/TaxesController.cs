@@ -1,38 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Danske.MTM.Application.Dtos;
+using Danske.MTM.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace Danske.MTM.WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     public class TaxesController : BaseApiController
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
-        private readonly ILogger<TaxesController> _logger;
-
-        public TaxesController(ILogger<TaxesController> logger)
+        private IMunicipalityTaxScheduleService _municipalityTaxScheduleService;
+        public TaxesController(IMunicipalityTaxScheduleService municipalityTaxScheduleService)
         {
-            _logger = logger;
+            _municipalityTaxScheduleService = municipalityTaxScheduleService;
+        }
+        [HttpGet]
+        public async Task<IEnumerable<MunicipalityTaxScheduleDto>> GetAll()
+        {
+            return await _municipalityTaxScheduleService.GetAllMunicipalityTax();
+
+        }
+        [HttpGet]
+        public async Task<IEnumerable<MunicipalityTaxScheduleDto>> GetById([FromQuery][Required]int taxId)
+        {
+            return await _municipalityTaxScheduleService.GetAllMunicipalityTax();
+
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<MunicipalityTaxScheduleDto> Search([FromQuery][Required][MinLength(3)][MaxLength(200)]string municipalityName, [FromQuery][Required]DateTime date)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return await _municipalityTaxScheduleService.SearchMunicipalityTax(municipalityName, date);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddTax([FromBody] MunicipalityTaxScheduleDto municipalityTaxScheduleDto)
+        {
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
+
+            var tax = await _municipalityTaxScheduleService.AddNewMunicipalityTax(municipalityTaxScheduleDto);
+            return Ok(tax);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateTax([FromQuery]int taxId, [FromBody] MunicipalityTaxScheduleDto municipalityTaxScheduleDto)
+        {
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
+
+            var tax = await _municipalityTaxScheduleService.UpdateExistingMunicipalityTax(taxId, municipalityTaxScheduleDto);
+            return Ok(tax);
+        }
+
+        [HttpPost]
+        public async Task<int> BulkUploadTaxes()
+        {
+            // To be added 
+            return await Task.Factory.StartNew(() => 0);
         }
     }
 }

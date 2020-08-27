@@ -19,7 +19,7 @@ Below tables would be needed to implement the requirement
 
 * TaxScheduleTypes (ID, NAME)
 * Municipality (ID, Name)
-* Municipality Tax Schedules (ID,MunicipalityName, TaxScheduleTypeID, FromDate, ToDate, CreatedOn, ModifiedOn)
+* Municipality Tax Schedules (ID,MunicipalityName, TaxScheduleTypeID, FromDate, ToDate, TaxAmount ,CreatedOn, ModifiedOn)
 
 > _For the sake of simplicity we will keep the municipality name in the municipality taxes table itself as it would be an optimal solution and would reduce one join condition while fetching records_.
 

@@ -5,7 +5,7 @@ namespace Danske.MTM.Common.Enums
     public enum eTaxScheduleTypes
     {
         [Description("Daily")]
-        Daily = 0,
+        Daily = 1,
         [Description("Weekly")]
         Weekly,
         [Description("Monthly")]
