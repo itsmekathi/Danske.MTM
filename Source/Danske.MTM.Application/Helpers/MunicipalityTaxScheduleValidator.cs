@@ -17,7 +17,7 @@ namespace Danske.MTM.Application.Helpers
                 case (int)eTaxScheduleTypes.Monthly:
                 case (int)eTaxScheduleTypes.Weekly:
                 case (int)eTaxScheduleTypes.Yearly:
-                    result = municipalityTaxScheduleDto.Todate != null && decimal.Compare(municipalityTaxScheduleDto.TaxAmount, 0) == 1;
+                    result = municipalityTaxScheduleDto.Todate != null && decimal.Compare(municipalityTaxScheduleDto.TaxAmount, 0) == 1 && municipalityTaxScheduleDto.FromDate < municipalityTaxScheduleDto.Todate;
                     break;
             }
             return result;

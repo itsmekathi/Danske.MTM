@@ -56,15 +56,19 @@ namespace Danske.MTM.Application.Services
         {
             bool isValid = MunicipalityTaxScheduleValidator.IsValid(municipalityTaxScheduleDto);
             if (!isValid) throw new ValidationException();
+
             MunicipalityTaxSchedules taxSchedule = MunicipalityTaxScheduleMapper.ToEntity(municipalityTaxScheduleDto);
             taxSchedule.CreatedOn = DateTime.Now;
-            await _municipalityTaxScheduleRepository.AddTaxSchedule(taxSchedule);
 
+            await _municipalityTaxScheduleRepository.AddTaxSchedule(taxSchedule);
             return MunicipalityTaxScheduleMapper.ToDto(taxSchedule);
         }
 
         public async Task<MunicipalityTaxScheduleDto> UpdateExistingMunicipalityTax(int id, MunicipalityTaxScheduleDto municipalityTaxScheduleDto)
         {
+            bool isValid = MunicipalityTaxScheduleValidator.IsValid(municipalityTaxScheduleDto);
+            if (!isValid) throw new ValidationException();
+
             MunicipalityTaxSchedules taxSchedule = await _municipalityTaxScheduleRepository.GetById(id);
             if (taxSchedule == null) throw new NotFoundException("MunicipalityTaxSchedules", id);
 
@@ -80,6 +84,9 @@ namespace Danske.MTM.Application.Services
 
         public async Task<int> BulkAddMunicipalityTax(IEnumerable<MunicipalityTaxScheduleDto> municipalityTaxScheduleDtos)
         {
+            bool isValid = municipalityTaxScheduleDtos.All(_ => MunicipalityTaxScheduleValidator.IsValid(_));
+            if (!isValid) throw new ValidationException();
+
             IEnumerable<MunicipalityTaxSchedules> taxSchedules = municipalityTaxScheduleDtos.Select(_ =>
             {
                 var entity = MunicipalityTaxScheduleMapper.ToEntity(_);

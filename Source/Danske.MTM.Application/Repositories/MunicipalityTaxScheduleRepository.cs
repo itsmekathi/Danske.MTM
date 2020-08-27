@@ -41,7 +41,8 @@ namespace Danske.MTM.Application.Repositories
 
         public async Task<MunicipalityTaxSchedules> UpdateTaxSchedule(MunicipalityTaxSchedules municipalityTaxSchedule)
         {
-            return await AddTaxSchedule(municipalityTaxSchedule);
+            await _mtmContext.SaveChangesAsync();
+            return municipalityTaxSchedule;
         }
 
         public async Task<int> BulkInsertTaxSchedule(IEnumerable<MunicipalityTaxSchedules> municipalityTaxSchedules)

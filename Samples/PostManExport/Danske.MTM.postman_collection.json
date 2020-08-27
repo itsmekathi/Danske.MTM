@@ -52,7 +52,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"taxSheduleTypeId\": 5,\r\n    \"municipalityName\": \"Copenhagen\",\r\n    \"taxAmount\": 0.20,\r\n    \"fromDate\": \"2016-01-01T00:00:00\",\r\n    \"todate\": \"2016-12-31T00:00:00\"\r\n}",
+					"raw": "{\r\n    \"taxSheduleTypeId\": 1,\r\n    \"municipalityName\": \"Copenhagen\",\r\n    \"taxAmount\": 0.20,\r\n    \"fromDate\": \"2016-01-01T00:00:00\",\r\n    \"todate\": \"2015-12-31T00:00:00\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -96,6 +96,35 @@
 						"api",
 						"taxes",
 						"AddTax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update existing tax",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"taxSheduleTypeId\": 1,\r\n    \"municipalityName\": \"Bengaluru\",\r\n    \"taxAmount\": 0.20,\r\n    \"fromDate\": \"2017-01-01T00:00:00\",\r\n    \"todate\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/taxes/UpdateTax/6",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"taxes",
+						"UpdateTax",
+						"6"
 					]
 				}
 			},

@@ -49,6 +49,9 @@ Below tables would be needed to implement the requirement
 7. Tested api requests and environment config are present in Samples/PostManExport folder which can be imported.
 
 ## Web Links
-* [All pending tasks](https://github.com/itsmekathi/Danske.MTM/issues)
-* [Pending Development tasks](https://github.com/itsmekathi/Danske.MTM/issues?q=is%3Aopen+is%3Aissue+label%3Adevelopment)
-* [Pending Enhancements](https://github.com/itsmekathi/Danske.MTM/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
+* [PENDING TASKS](https://github.com/itsmekathi/Danske.MTM/issues)
+* [PENDING DEVELOPMENT TASKS](https://github.com/itsmekathi/Danske.MTM/issues?q=is%3Aopen+is%3Aissue+label%3Adevelopment)
+* [PENDING ENHANCEMENTS](https://github.com/itsmekathi/Danske.MTM/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
+
+## Abbreviations
+1. MTM - Municipality Tax manager/Management.
