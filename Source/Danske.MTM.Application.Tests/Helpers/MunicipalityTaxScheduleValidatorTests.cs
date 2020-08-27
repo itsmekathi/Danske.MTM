@@ -77,12 +77,22 @@ namespace Danske.MTM.Application.Tests
         [Test]
         public void IsValid_WhenForAnyTypeWithNegativeTaxAmount_ShouldReturnFalse()
         {
-            municipalityTaxScheduleDto.TaxAmount = 0.0M;
+            municipalityTaxScheduleDto.TaxAmount = -0.0M;
 
             bool result = MunicipalityTaxScheduleValidator.IsValid(municipalityTaxScheduleDto);
 
             Assert.IsFalse(result);
         }
 
+        [Test]
+        public void IsValid_WhenFromDateIsGreaterThanToDate_ShouldReturnFalse()
+        {
+            municipalityTaxScheduleDto.FromDate = DateTime.Now;
+            municipalityTaxScheduleDto.Todate = DateTime.Now.AddDays(-1);
+            bool result = MunicipalityTaxScheduleValidator.IsValid(municipalityTaxScheduleDto);
+
+            Assert.IsFalse(result);
+
+        }
     }
 }
