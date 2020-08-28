@@ -14,12 +14,6 @@ Contains Solution for Coding round interview for DANSKE IT.
 3. Year starts at the first day of January and ends in last day of December.
 4. Week starts on monday and ends on sunday.
 
-## Pre-requisites for running the code
-* .NET core 3.1 or latest should be installed on the machine.
-* Microsoft Visual Studio Professional 2019 Version 16.4.2 or latest
-* SQL Server 2008 and upwards.
-
-
 ## Database Schema design and Normalization.
 Below tables would be needed to implement the requirement
 
@@ -38,6 +32,13 @@ Below tables would be needed to implement the requirement
 > * From the description provided, it is clear that the taxes scheduled for day is of higher precedence and then weekly and similary month and year, so this logic will be implemented in the service layer as as a set of if statements if data exists for day, then week and so on.
 > * All data which are present in the DB should be created by API.
 > * Validations would be added at the API front as well as database constraints.
+
+
+## Pre-requisites for running the code
+* .NET core 3.1 or latest should be installed on the machine.
+* Microsoft Visual Studio Professional 2019 Version 16.4.2 or latest
+* SQL Server 2008 and upwards.
+
 
 ## Instructions for Running the project locally.
 1. Run the scripts provided in folder DBScripts in the same order as they are numbered.
