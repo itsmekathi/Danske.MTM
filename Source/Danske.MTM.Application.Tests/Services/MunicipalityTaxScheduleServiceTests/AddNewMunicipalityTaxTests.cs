@@ -19,7 +19,7 @@ namespace Danske.MTM.Application.Tests.Services.MunicipalityTaxScheduleServiceTe
         private MunicipalityTaxScheduleService _service;
         private Mock<IMunicipalityTaxScheduleRepository> _repoMock;
         MunicipalityTaxScheduleDto requestObject;
-        
+
 
 
         [SetUp]
@@ -30,7 +30,7 @@ namespace Danske.MTM.Application.Tests.Services.MunicipalityTaxScheduleServiceTe
             {
                 return await Task.Factory.StartNew(() => MunicipalityTaxSchedulesMockData.Get().First());
             });
-            requestObject  = new MunicipalityTaxScheduleDto()
+            requestObject = new MunicipalityTaxScheduleDto()
             {
                 MunicipalityName = "Municipality-3",
                 TaxAmount = 10.2M,
@@ -44,7 +44,7 @@ namespace Danske.MTM.Application.Tests.Services.MunicipalityTaxScheduleServiceTe
         [Test]
         public async Task AddNewMunicipalityTax_WhenValidDataIsPassed_ShouldReturnCreatedEntity()
         {
-            
+
             var actual = await _service.AddNewMunicipalityTax(requestObject);
             Assert.IsNotNull(actual);
 
