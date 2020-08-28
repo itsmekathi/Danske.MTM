@@ -29,10 +29,9 @@ Below tables would be needed to implement the requirement
 * Logging will be done at an API level for exceptions as API would be the client facing part.
 
 ## Application Logic
-> * From the description provided, it is clear that the taxes scheduled for day is of higher precedence and then weekly and similary month and year, so this logic will be implemented in the service layer as as a set of if statements if data exists for day, then week and so on.
+> * From the description provided, it is clear that the taxes scheduled for day is of higher precedence and then weekly and similary month and year, so this logic will be implemented in the service layer as as a set of if statements if data does not exists for day, then check whether week data, then month and then year.
 > * All data which are present in the DB should be created by API.
-> * Validations would be added at the API front as well as database constraints.
-
+> * Validations would be added at the API front as well as appropriate database constraints.
 
 ## Pre-requisites for running the code
 * .NET core 3.1 or latest should be installed on the machine.
